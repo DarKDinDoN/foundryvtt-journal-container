@@ -1,0 +1,86 @@
+#fvtt-journal-container {
+  > .window-content {
+    padding: 0;
+    background: none;
+    overflow: hidden;
+  }
+
+  > .window-resizable-handle {
+    z-index: 999;
+  }
+
+  .tabs {
+    background: url(/ui/denim075.png) repeat;
+    height: 25px;
+    justify-content: inherit;
+    padding-top: 2px;
+    border-bottom: 2px solid #000;
+
+    .tab {
+      background: url(/ui/parchment.jpg) repeat;
+      display: flex;
+      flex-basis: 120px;
+      align-items: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 2px;
+      padding: 0 4px;
+      border-radius: 3px 3px 0 0;
+      cursor: pointer;
+      opacity: 0.6;
+      font-weight: bold;
+
+      &.active {
+        opacity: 1;
+      }
+
+      i {
+        margin-left: auto;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      &:hover i {
+        opacity: 1;
+      }
+    }
+  }
+
+  .containers {
+    height: calc(100% - 25px);
+
+    .journal-entry-container {
+      display: none;
+      height: 100%;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .app.journal-sheet.journal-entry {
+      position: relative;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+
+      > header,
+      .window-resizable-handle {
+        display: none;
+      }
+
+      .journal-entry-content {
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
